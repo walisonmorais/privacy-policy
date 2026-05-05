@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,14 +10,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #6366f1;
-            --primary-dark: #4f46e5;
+            --primary: #2563eb;
+            --primary-glow: rgba(37, 99, 235, 0.2);
             --bg: #0f172a;
-            --card-bg: rgba(30, 41, 59, 0.7);
+            --surface: #1e293b;
             --text: #f8fafc;
             --text-muted: #94a3b8;
-            --accent: #818cf8;
-            --border: rgba(255, 255, 255, 0.1);
+            --accent: #38bdf8;
         }
 
         * {
@@ -30,151 +30,187 @@
             background-color: var(--bg);
             color: var(--text);
             line-height: 1.6;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 2rem;
-            background-image: 
-                radial-gradient(circle at 0% 0%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 100% 100%, rgba(79, 70, 229, 0.1) 0%, transparent 50%);
+            padding: 40px 20px;
         }
 
         .container {
             max-width: 800px;
-            width: 100%;
-            background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            margin: 0 auto;
+            background: var(--surface);
+            padding: 40px;
             border-radius: 24px;
-            padding: 3rem;
-            border: 1px solid var(--border);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            animation: fadeIn 0.8s ease-out;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .header {
+        header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 40px;
         }
 
         .logo {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            border-radius: 20px;
-            margin: 0 auto 1.5rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 700;
-            font-size: 2rem;
-            color: white;
-            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+            gap: 12px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .app-logo {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 10px 20px rgba(37, 99, 235, 0.3));
         }
 
         h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            background: linear-gradient(to right, #fff, var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--accent);
         }
 
-        .subtitle {
+        h2 {
+            font-size: 1.4rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: var(--text);
+            border-left: 4px solid var(--primary);
+            padding-left: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
             color: var(--text-muted);
             font-weight: 300;
         }
 
-        section {
-            margin-bottom: 2.5rem;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            color: var(--accent);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-        }
-
-        h2::before {
-            content: '';
-            display: inline-block;
-            width: 4px;
-            height: 24px;
-            background: var(--primary);
-            margin-right: 12px;
-            border-radius: 2px;
-        }
-
-        p {
+        ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
             color: var(--text-muted);
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
         }
 
-        strong {
+        li {
+            margin-bottom: 8px;
+        }
+
+        .highlight {
             color: var(--text);
             font-weight: 600;
         }
 
-        .footer {
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border);
+        footer {
             text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             font-size: 0.9rem;
             color: var(--text-muted);
         }
 
-        @media (max-width: 640px) {
+        .last-update {
+            font-size: 0.8rem;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--primary-glow);
+            color: var(--accent);
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 600px) {
             .container {
-                padding: 1.5rem;
-            }
-            h1 {
-                font-size: 1.8rem;
+                padding: 20px;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
-        <header class="header">
-            <div class="logo">GC</div>
-            <h1>GuardCall</h1>
-            <p class="subtitle">Política de Privacidade</p>
+        <header>
+            <!-- Logo SVG inline para garantir que funcione em qualquer lugar (GitHub/Web) -->
+            <svg class="app-logo" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M256 32L80 96V240C80 348.8 154.4 449.6 256 480C357.6 449.6 432 348.8 432 240V96L256 32Z"
+                    fill="#2563EB" />
+                <path d="M256 32V480C357.6 449.6 432 348.8 432 240V96L256 32Z" fill="#1D4ED8" />
+                <path
+                    d="M256 120C210.8 120 174 156.8 174 202V310C174 355.2 210.8 392 256 392C301.2 392 338 355.2 338 310V280H284V310C284 325.4 271.4 338 256 338C240.6 338 228 325.4 228 310V202C228 186.6 240.6 174 256 174C271.4 174 284 186.6 284 202V232H338V202C338 156.8 301.2 120 256 120Z"
+                    fill="white" />
+            </svg>
+            <div class="logo">GuardCall</div>
+            <div class="badge">Privacidade em Primeiro Lugar</div>
+            <p class="last-update">Última atualização: 05 de Maio de 2026</p>
         </header>
 
         <section>
-            <p>O aplicativo <strong>GuardCall</strong> é focado na privacidade do usuário e na proteção contra comunicações indesejadas.</p>
+            <h1>Política de Privacidade</h1>
+            <p>O <strong>GuardCall</strong>, desenvolvido pela <strong>WMTECK</strong>, foi projetado para oferecer a
+                máxima proteção contra chamadas indesejadas, respeitando integralmente a sua privacidade. Esta política
+                descreve como tratamos as suas informações.</p>
+
+            <h2>1. Coleta de Dados e Transmissão</h2>
+            <p><span class="highlight">O GuardCall não coleta, armazena em servidores externos ou transmite qualquer
+                    dado pessoal.</span></p>
+            <p>Diferente de outras soluções de mercado, o GuardCall opera de forma <span
+                    class="highlight">Local-First</span>. Isso significa que todas as informações processadas pelo
+                aplicativo permanecem exclusivamente no seu dispositivo móvel.</p>
+
+            <h2>2. Uso de Permissões</h2>
+            <p>Para o correto funcionamento do bloqueio, o aplicativo solicita as seguintes permissões:</p>
+            <ul>
+                <li><span class="highlight">Contatos:</span> Utilizada exclusivamente para identificar chamadas de
+                    pessoas conhecidas e evitar o bloqueio acidental de amigos e familiares. Seus contatos NUNCA são
+                    enviados para nossos servidores.</li>
+                <li><span class="highlight">Registro de Chamadas:</span> Utilizada para exibir o histórico de chamadas
+                    bloqueadas dentro do próprio app e para identificar números que devem ser filtrados.</li>
+                <li><span class="highlight">Serviço de Triagem de Chamadas (Call Screening):</span> Permissão
+                    fundamental para interceptar e silenciar chamadas de spam em tempo real.</li>
+            </ul>
+
+            <h2>3. Armazenamento de Dados</h2>
+            <p>As regras de bloqueio criadas por você e o histórico de logs de chamadas interceptadas são armazenados em
+                um banco de dados local (SQLite/Room) dentro do seu aparelho. Ao desinstalar o aplicativo, todos esses
+                dados são removidos permanentemente.</p>
+
+            <h2>4. LGPD e Seus Direitos</h2>
+            <p>Em conformidade com a <span class="highlight">Lei Geral de Proteção de Dados (LGPD)</span>, garantimos
+                que você tem controle total sobre seus dados. Como não coletamos informações em nossos servidores, o seu
+                direito de acesso, correção e exclusão é exercido por você diretamente através das configurações do
+                aplicativo.</p>
+
+            <h2>5. Segurança</h2>
+            <p>Implementamos as melhores práticas de segurança no desenvolvimento do código para garantir que o
+                processamento das chamadas seja seguro e eficiente, minimizando riscos de exposição de dados locais.</p>
+
+            <h2>6. Alterações nesta Política</h2>
+            <p>Podemos atualizar nossa Política de Privacidade ocasionalmente. Recomendamos que você revise esta página
+                periodicamente para quaisquer alterações.</p>
+
+            <h2>7. Contato</h2>
+            <p>Se você tiver alguma dúvida sobre nossa Política de Privacidade, entre em contato conosco:</p>
+            <p>E-mail: <span class="highlight">suporte@wmteck.com</span></p>
         </section>
 
-        <section>
-            <h2>Coleta de Dados</h2>
-            <p>O <strong>GuardCall</strong> não coleta, não armazena e não transmite nenhum dado pessoal, lista de contatos ou registros de chamadas para servidores externos.</p>
-        </section>
-
-        <section>
-            <h2>Processamento Local</h2>
-            <p>Todo o processamento de filtragem e bloqueio de spam é realizado localmente no seu dispositivo. As configurações de números bloqueados permanecem exclusivamente no aparelho do usuário.</p>
-        </section>
-
-        <section>
-            <h2>Permissões</h2>
-            <p>O app solicita permissões de Registro de Chamadas estritamente para identificar e bloquear números indesejados conforme configurado pelo usuário. Estas informações nunca saem do seu dispositivo.</p>
-        </section>
-
-        <footer class="footer">
-            <p>&copy; 2024 GuardCall. Todos os direitos reservados.</p>
-            <p>Última atualização: 5 de maio de 2026</p>
+        <footer>
+            &copy; 2026 WMTECK. Todos os direitos reservados.<br>
+            GuardCall - Proteção Silenciosa e Inteligente.
         </footer>
     </div>
 </body>
+
 </html>
