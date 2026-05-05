@@ -8,7 +8,7 @@ Abaixo você encontra os links diretos para as políticas de privacidade de cada
 
 | Aplicativo | Link da Política | Última Atualização |
 | :--- | :--- | :--- |
-| **🛡️ GuardCall** | [Visualizar Política](https://walisonmorais.github.io/privacy-policy/GUARDCALL/) | Maio 2026 |
+| **🛡️ GuardCall** | [Visualizar Política](https://wmteck.com.br/GUARDCALL/) | Maio 2026 |
 
 ---
 
